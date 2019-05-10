@@ -1,7 +1,20 @@
 import React from 'react';
 
 interface Props {
-	data: any;
+		stat: Array<number>,
+		total: Array<string>,
+
+		homeStats: Array<number | string>,
+		homeTotal: Array<number | string>,
+		homeTeamNameAbr: String,
+		homeTeamName: String,
+		homeTeamCount: String,
+		awayStats: Array<number>,
+		awayTotal: Array<number | string>,
+		awayTeamNameAbr: String,
+		awayTeamName: String,
+		awayTeamCount: String
+
 }
 
 const Widget: React.FC<Props> = props => {
@@ -11,75 +24,45 @@ return (
 		<div className="boxscore__team boxscore__team--header">
 			<label></label>
 			<div className="boxscore__team__units">
-				<span>1</span>
-				<span>2</span>
-				<span>3</span>
-				<span>4</span>
-				<span>5</span>
-				<span>6</span>
-				<span>7</span>
-				<span>8</span>
-				<span>9</span>
+				{props.stat && props.stat.map((el: number, i: number) => <span key={i}>{el}</span>)}
 			</div>
 			<div className="boxscore__team__results">
-				<span>R</span>
-				<span>H</span>
-				<span>E</span>
+				{props.total && props.total.map((el: string, i: number) => <span key={i}>{el}</span>)}
 			</div>
 		</div>
 		<div className="boxscore__team boxscore__team--away">
-			<label>CHC</label>
+			<label>{props.homeTeamNameAbr}</label>
 			<div className="boxscore__team__units">
-				<span>1</span>
-				<span>0</span>
-				<span>2</span>
-				<span>0</span>
-				<span>0</span>
-				<span>0</span>
-				<span>0</span>
-				<span>1</span>
-				<span>1</span>
+				{props.awayStats && props.awayStats.map((el: number, i: number) => <span key={i}>{el}</span>)}
 			</div>
 			<div className="boxscore__team__results">
-				<span>5</span>
-				<span>12</span>
-				<span>0</span>
+				{props.awayTotal && props.awayTotal.map((el: string, i: number) => <span key={i}>{el}</span>)}
 			</div>
 		</div>
 		<div className="boxscore__team boxscore__team--home">
-			<label>STL</label>
+			<label>{props.homeTeamName}</label>
 			<div className="boxscore__team__units">
-				<span>0</span>
-				<span>0</span>
-				<span>0</span>
-				<span>3</span>
-				<span>0</span>
-				<span>0</span>
-				<span>0</span>
-				<span>0</span>
-				<span>1</span>
+				{props.homeStat && props.hometat.map((el: number, i: number) => <span key={i}>{el}</span>)}
 			</div>
 			<div className="boxscore__team__results">
-				<span>4</span>
-				<span>8</span>
-				<span>1</span>
+				{props.homeTotal && props.homeTotal.map((el: number, i: number) => <span key={i}>{el}</span>)}
 			</div>
 		</div>
 		<div className="boxscore__details">
 			<div className="boxscore__details__team boxscore__details__team--away">
 				<p>
-					<strong>Cubs</strong><small>CHC</small>
+					<strong>{props.awayTeamName}</strong><small>{props.awayTeamNameAbr}</small>
 				</p>
-				<span>56-38</span>
+				<span>{props.awayTeamCount}</span>
 			</div>
 			<div className="boxscore__details__info">
 				<strong>Btm<br />9th</strong>
 			</div>
 			<div className="boxscore__details__team boxscore__details__team--home">
 				<p>
-					<strong>Cardinals</strong><small>STL</small>
+					<strong>{props.homeTeamName}</strong><small>{props.homeTeamNameAbr}</small>
 				</p>
-				<span>56-38</span>
+				<span>{props.homeTeamCount}</span>
 			</div>
 		</div>
 	</div>
