@@ -6,7 +6,7 @@ import Widget from './Widget';
 
 
 const App: React.FC = props => {
-	const [leagues] = useState<Array<string>>(['NBA']);
+	const [leagues] = useState<Array<string>>(['NBA','MLB']);
 	const [data, setData] = useState<Array<IGameInfo>>([]);
 	useEffect(() => {
 
@@ -24,7 +24,7 @@ const App: React.FC = props => {
 
 	return (
 		<div className="App">
-			{data && data.map((game: IGameInfo) => <Widget data={game} /> )}
+			{data && data.map((game: IGameInfo, i: number) => <Widget key={i} data={game} /> )}
 		</div>
 	);
 }
