@@ -1,7 +1,7 @@
 import axios from 'axios' 
 
 
-const fetchfromApi = (league: string) => {
+const fetchfromApi = (league: String) => {
     
     const url = 'http://localhost:3001/data';
     return axios
