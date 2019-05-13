@@ -16,7 +16,9 @@ export const getNecessaryData = (data: Array<any>) => {
             awayTotal: [],
             awayTeamNameAbr: '',
             awayTeamName: '',
-            awayTeamCount: ''
+						awayTeamCount: '',
+						status: '',
+						period: ''
         };
 
         res.homeStats = d.home_period_scores;
@@ -47,7 +49,8 @@ export const getNecessaryData = (data: Array<any>) => {
             res.awayTotal = [awaySum, d.extentions.away_batter_totals.hits, d.extentions.away_errors];
             res.homeTeamCount = d.extentions.home_batter_totals.batting_highlights.split(',').shift();
             res.awayTeamCount = d.extentions.away_batter_totals.batting_highlights.split(',').shift();
-
+						res.status = 'BTM'
+						res.period = '9th'
         }
 
         fillArr(res.awayStats, res.stat);

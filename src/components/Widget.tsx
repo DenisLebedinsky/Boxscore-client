@@ -19,7 +19,7 @@ return (
 			</div>
 		</div>
 		<div className="boxscore__team boxscore__team--away">
-			<label>{props.data.homeTeamNameAbr}</label>
+			<label>{props.data.awayTeamNameAbr}</label>
 			<div className="boxscore__team__units">
 				{props.data.awayStats && props.data.awayStats.map((el: number, i: number) => <span key={i}>{el}</span>)}
 			</div>
@@ -28,7 +28,7 @@ return (
 			</div>
 		</div>
 		<div className="boxscore__team boxscore__team--home">
-			<label>{props.data.homeTeamName}</label>
+			<label>{props.data.homeTeamNameAbr}</label>
 			<div className="boxscore__team__units">
 				{props.data.homeStats && props.data.homeStats.map((el: any, i: number) => <span key={i}>{el}</span>)}
 			</div>
@@ -44,7 +44,7 @@ return (
 				<span>{props.data.awayTeamCount}</span>
 			</div>
 			<div className="boxscore__details__info">
-				<strong>Btm<br />9th</strong>
+				<strong>{props.data.status}<br />{props.data.period}</strong>
 			</div>
 			<div className="boxscore__details__team boxscore__details__team--home">
 				<p>
