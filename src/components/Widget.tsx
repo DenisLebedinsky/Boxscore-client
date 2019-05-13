@@ -1,40 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import io from "socket.io-client";
 import fetchfromApi from '../api';
 import NBA from './NBA'
 import MLB from './MLB'
 
-const port = "http://localhost:3001";
-const socket = io(port);
 
-interface IProps {
-	league: String
-}
+
 
 const Widget: React.FC<IProps> = props => {
 
-	const [data, setData] = useState();
 
-	useEffect(() => {
-		const fetchdata = async (league: String) => {
+	const fetchData = async (league: string) => {
 
-			const fetchApi = await fetchfromApi(league);
-				
-			setData(fetchApi);
+		const fetchApi = await fetchfromApi(league);
 
-			socket.on('update_Data_' + league, (fetchData: any) => {
-				console.log('updating ' + league, fetchData)
-				setData(fetchData)
-			});
-		}
-		fetchdata(props.league);
-	}, [props.league])
+		return fetchApi
+	}
 
+	const subscribeIo = (league: string) => {
+		const port = "http://localhost:3001";
+		const socket = io(port);
+		socket.on(`update_Data_${league}`, (data: any) => {
+			console.log('updating', data)
+		});
+	}
 
 	return (
 		<div>
-	{data && (props.league === 'NBA' && <NBA data={data} />)}
-	{data && (props.league === 'MLB' && <MLB data={data} />)}
+			<NBA fetchData={fetchData} subscribeIo={subscribeIo} />
+			{/*<MLB fetchData={fetchData} subscribeIo={subscribeIo}/>)*/}
 		</div>
 	)
 
