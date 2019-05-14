@@ -1,8 +1,14 @@
-Boxscore client 
+## Boxscore client 
 
-## Available Scripts
+This is client for server-side app 
+https://github.com/DenisLebedinsky/Boxscore
 
-In the project directory, you can run:
+## install
+
+```
+  npm install 
+```
+
 
 ### `npm start`
 
@@ -14,5 +20,4 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.<br>s
