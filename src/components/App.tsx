@@ -1,11 +1,13 @@
 import React from 'react';
-import NBAFameTable from './NBAGemeTable';
+import NBAGameTable from './NBAGemeTable';
+import MLBGameTable from './MLBGemeTable';
 
-const App: React.FC = props => {
+const App: React.FC = () => {
 
 	return (
 		<div className="App">
-			<NBAFameTable />
+			<NBAGameTable />
+			<MLBGameTable />
 		</div>
 	);
 }

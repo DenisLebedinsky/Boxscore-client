@@ -3,33 +3,32 @@ import GameTable from './GameTable'
 
 interface Ibatter_totals {
 	batting_highlights: any;
-	points: ReactNode;
 	hits: ReactNode;
 }
 
 interface ITotalDetailsExtentions {
-	away_totals: any;
-	home_totals: any;
 	away_batter_totals: Ibatter_totals;
 	away_errors: string;
 	home_batter_totals: Ibatter_totals;
 }
 
 interface ITotalDetails {
-	extentions: ITotalDetailsExtentions;
+	away_period_scores: any;
+	home_period_scores: any;
+	extentions: ITotalDetailsExtentions;	
 }
 
-interface IEventInformation {
+interface IEventInformation{
 	status: string;
 }
 
 interface ITeam {
-	first_name: ReactNode;
+	first_name: ReactNode;	
 	abbreviation: ReactNode;
 }
 
 interface IFooterGame {
-	event_information: IEventInformation;
+	event_information: IEventInformation;	
 	away_team: ITeam;
 	extentions: ITotalDetailsExtentions;
 	home_team: ITeam;
@@ -37,15 +36,15 @@ interface IFooterGame {
 
 interface IProps {
 	getScoreTableUI(data: object): any,
-	getTotalDetails(data: object): any,
+	getTotalDetails(data: ITotalDetails): any,
 	getFooterGame(data: object): any,
 	fetchData(league: string): object;
 	subscribeIo(league: string, setData: React.Dispatch<any>): object;
 }
 
-const NBAGameTable: React.FC<IProps> = props => {
+const MLBGameTable: React.FC<IProps> = props => {
 
-	const league = 'NBA';
+	const league = 'MLB';
 	const [data, setData] = useState();
 
 	useEffect(() => {
@@ -55,52 +54,64 @@ const NBAGameTable: React.FC<IProps> = props => {
 		getData();
 	}, [league])
 
+
 	useEffect(() => {
 		props.subscribeIo(league, setData);
-	}, [league])
+	}, [data])
+
+
 
 	const getTotalDetails = (data: ITotalDetails) => {
-		if (!data) {
-			return null;
-		}
-		return (
-			<div className="totalDetails">
-				<div className="boxscore__team__results boxscore__team__results--header">
-					<span>Total</span>
+		if (data) {
+			const awayPoints = data.away_period_scores.reduce((a:string, b:number)=> parseInt(a)+b)
+			const homePoints = data.home_period_scores.reduce((a: string, b: number) => parseInt(a) + b)
+			return (
+				<div className="totalDetails">
+					<div className="boxscore__team__results boxscore__team__results--header">
+						<span>R</span>
+						<span>H</span>
+						<span>E</span>
+					</div>
+					<div className="boxscore__team__results">
+						<span>{awayPoints}</span>
+						<span>{data.extentions.away_batter_totals.hits}</span>
+						<span>{data.extentions.away_errors}</span>
+					</div>
+					<div className="boxscore__team__results">
+						<span>{homePoints}</span>
+						<span>{data.extentions.home_batter_totals.hits}</span>
+						<span>{data.extentions.away_errors}</span>
+					</div>
 				</div>
-				<div className="boxscore__team__results">
-					<span>{data.extentions.away_totals.points}</span>
-				</div>
-				<div className="boxscore__team__results">
-					<span>{data.extentions.home_totals.points}</span>
-				</div>
-			</div>
 
-		)
+			)
+		}
 	};
 
 	const getFooterGame = (data: IFooterGame) => {
 		if (!data) {
 			return null;
 		}
-		
+		const status = data.event_information.status === 'completed' ? 'BTM' : data.event_information.status;
 		return (
 			<div className="boxscore__details">
 				<div className="boxscore__details__team boxscore__details__team--away">
 					<p>
 						<strong>{data.away_team.first_name}</strong><small>{data.away_team.abbreviation}</small>
 					</p>
+					<span>{data.extentions.away_batter_totals.batting_highlights.split(',').shift()}</span>
 				</div>
 				<div className="boxscore__details__info">
-					<strong>{data.event_information.status}
+					<strong>{status}
 						<br />
-						4th {/*api response havn't this info*/}
+						9th {/*api response havn't this info*/}
 					</strong>
 				</div>
 				<div className="boxscore__details__team boxscore__details__team--home">
 					<p>
 						<strong>{data.home_team.first_name}</strong><small>{data.home_team.abbreviation}</small>
 					</p>
+					<span>{data.extentions.home_batter_totals.batting_highlights.split(',').shift()}</span>
 				</div>
 			</div>
 
@@ -122,4 +133,4 @@ const NBAGameTable: React.FC<IProps> = props => {
 
 }
 
-export default GameTable(NBAGameTable);
+export default GameTable(MLBGameTable);
