@@ -1,4 +1,9 @@
-## Boxscore client 
+# The Boxscore Challenge client 
+
+The Boxscore is the goto widget on any sports site to get quick information about a game. ESPN, Fox Sports, theScore, and many others have solutions.
+
+![Boxscore Design Example](https://chumley.barstoolsports.com/wp-content/uploads/2018/12/21/boxscore.png)
+
 
 This is client for server-side app 
 https://github.com/DenisLebedinsky/Boxscore
