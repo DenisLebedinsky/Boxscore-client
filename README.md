@@ -22,7 +22,7 @@ npm  install
 npm run test
 ```
 
-### Running prodaction
+### Running production
 
 ```
 npm run start
