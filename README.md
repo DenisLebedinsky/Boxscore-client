@@ -3,21 +3,28 @@
 This is client for server-side app 
 https://github.com/DenisLebedinsky/Boxscore
 
-## install
+
+### Installing
 
 ```
-  npm install 
+npm  install
 ```
 
 
-### `npm start`
+## Running the tests
 
-Runs the app in the development mode.<br>
+```
+npm run test
+```
+
+### Running prodaction
+
+```
+npm run start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Authors
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>s
+Denis Lebedinsky https://github.com/DenisLebedinsky

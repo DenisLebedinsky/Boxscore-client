@@ -7,7 +7,6 @@ describe('<MLBGameTable />', () => {
     const NBA = shallow(<MLBGameTable />)
     it('renders without crashing', () => {
         const NBA = shallow(<MLBGameTable />)
-
     });
 
 })
