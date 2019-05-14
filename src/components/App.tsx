@@ -1,11 +1,11 @@
 import React from 'react';
-import Widget from './Widget';
+import NBAFameTable from './NBAGemeTable';
 
 const App: React.FC = props => {
 
 	return (
 		<div className="App">
-			<Widget />
+			<NBAFameTable />
 		</div>
 	);
 }
