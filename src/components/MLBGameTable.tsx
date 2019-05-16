@@ -15,20 +15,20 @@ interface ITotalDetailsExtentions {
 interface ITotalDetails {
 	away_period_scores: any;
 	home_period_scores: any;
-	extentions: ITotalDetailsExtentions;	
+	extentions: ITotalDetailsExtentions;
 }
 
-interface IEventInformation{
+interface IEventInformation {
 	status: string;
 }
 
 interface ITeam {
-	first_name: ReactNode;	
+	first_name: ReactNode;
 	abbreviation: ReactNode;
 }
 
 interface IFooterGame {
-	event_information: IEventInformation;	
+	event_information: IEventInformation;
 	away_team: ITeam;
 	extentions: ITotalDetailsExtentions;
 	home_team: ITeam;
@@ -63,7 +63,7 @@ const MLBGameTable: React.FC<IProps> = props => {
 
 	const getTotalDetails = (data: ITotalDetails) => {
 		if (data) {
-			const awayPoints = data.away_period_scores.reduce((a:string, b:number)=> parseInt(a)+b)
+			const awayPoints = data.away_period_scores.reduce((a: string, b: number) => parseInt(a) + b)
 			const homePoints = data.home_period_scores.reduce((a: string, b: number) => parseInt(a) + b)
 			return (
 				<div className="totalDetails">
@@ -89,6 +89,7 @@ const MLBGameTable: React.FC<IProps> = props => {
 	};
 
 	const getFooterGame = (data: IFooterGame) => {
+		console.log(data)
 		if (!data) {
 			return null;
 		}

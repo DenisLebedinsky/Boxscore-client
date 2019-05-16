@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import "jest-enzyme";
 import NBAGameTable from "../components/NBAGameTable";
-import axios from "../__mocks__/axios";
+import axios from 'axios'
+import mockApi from "../__mocks__/axios";
 
 
 jest.mock("axios");
 
 describe("NBAGameTable", () => {
-	const getSpy = jest.spyOn(axios, "get");
 
 
   const NBAGame = mount(<NBAGameTable />);
@@ -24,12 +24,27 @@ describe("NBAGameTable", () => {
     expect(NBAGame).toContainReact(boxscore);
   });
 
-  it("check call axios.get", () => {
-    expect(getSpy).toBeCalled();
-	});
-	
+  it('should fetch a team list', async () => {
+
+    const getSpy = jest.spyOn(axios, 'get')
+    const data = getSpy()
+    let game = await data
+    console.log(data)
+    expect(getSpy).toBeCalled()
+    const diveInstance = NBAGame.render()
+    mockApi.get().then(() => {
+
+      expect(NBAGame.state().game).toEqual(expect.objectContaining({
+        away_period_scores: expect.any(Array),
+        home_period_scores: expect.any(Array),
+        away_team: expect.any(Object),
+        home_team: expect.any(Object)
+      }));
+    })
+  });
+
   it("check contain child block", () => {
     expect(NBAGame).toMatchSnapshot();
-	});
-	
+  });
+
 });
