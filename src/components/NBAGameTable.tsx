@@ -66,7 +66,7 @@ const NBAGameTable: React.FC<IProps> = props => {
 		return (
 			<div className="totalDetails">
 				<div className="boxscore__team__results boxscore__team__results--header">
-					<span>Total</span>
+					<span className='totalCheck'>Total</span>
 				</div>
 				<div className="boxscore__team__results">
 					<span>{data.extentions.away_totals.points}</span>

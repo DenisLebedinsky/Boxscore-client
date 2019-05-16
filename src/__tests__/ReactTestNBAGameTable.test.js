@@ -2,10 +2,22 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 import NBAGameTable from "../components/NBAGameTable";
-import { act } from 'react-dom/test-utils';
+import { act, findByProps } from 'react-dom/test-utils';
 import axios from 'axios'
 import mockApi from "../__mocks__/axios";
+import TestRenderer from 'react-test-renderer';
 
+it('render', ()=>{
+const testRenderer = TestRenderer.create(<NBAGameTable />);
+console.log(testRenderer.toTree());
+
+const testInstance = testRenderer.root;
+
+expect(testInstance.findByProps({className: "tableScore"}).children).toEqual([]);
+})
+
+
+/*
 let GameTable;
 
 beforeEach(() => {
@@ -26,9 +38,8 @@ it('render', () => {
 
   const button = GameTable.querySelector('button');
   const label = GameTable.querySelector('p');
-  /*
-   expect(label.textContent).toBe('Вы нажали на кнопку 0 раз');
-   expect(document.title).toBe('Вы нажали на кнопку 0 раз');
- */
+  
 
 });
+
+*/
