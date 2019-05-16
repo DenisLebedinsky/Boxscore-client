@@ -83,7 +83,7 @@ const NBAGameTable: React.FC<IProps> = props => {
 		if (!data) {
 			return null;
 		}
-		
+
 		return (
 			<div className="boxscore__details">
 				<div className="boxscore__details__team boxscore__details__team--away">
@@ -108,15 +108,12 @@ const NBAGameTable: React.FC<IProps> = props => {
 	};
 
 	return (
-		<div>
-			<div className="boxscore">
-				<div className="tableScore">
-					{props.getScoreTableUI(data)}
-					{getTotalDetails(data)}
-				</div>
-				{getFooterGame(data)}
+		<div className="boxscore">
+			<div className="tableScore">
+				{props.getScoreTableUI(data)}
+				{getTotalDetails(data)}
 			</div>
-
+			{getFooterGame(data)}
 		</div>
 	)
 

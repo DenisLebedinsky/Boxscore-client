@@ -1,6 +1,6 @@
 import React from 'react';
-import NBAGameTable from './NBAGemeTable';
-import MLBGameTable from './MLBGemeTable';
+import NBAGameTable from './NBAGameTable';
+import MLBGameTable from './MLBGameTable';
 
 const App: React.FC = () => {
 

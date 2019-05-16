@@ -14,7 +14,7 @@ interface IScoreTableUI {
 	home_period_scores: Array<string>;
 }
 
-function GameTable(WrappedComponent: any) {
+function GameTable(Component: any) {
 
 	const helpers = {
 		getScoreTableUI: (data: IScoreTableUI) => {
@@ -65,7 +65,7 @@ function GameTable(WrappedComponent: any) {
 
 
 	return (props: any) => {
-		return <WrappedComponent {...props}{...helpers} />
+		return <Component {...props}{...helpers} />
 	}
 }
 
