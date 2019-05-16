@@ -22,6 +22,14 @@ export default {
           },
           home_totals: {
             points: 121
+          },
+          home_batter_totals: {
+            hits: 13,
+            batting_highlights: "5-29, HR, 3 R, 3 RBI, 2B"
+          },
+          away_batter_totals: {
+            hits: 7,
+            batting_highlights: "10-33, 4 R, 4 RBI, 2B, SB"
           }
         }
       }

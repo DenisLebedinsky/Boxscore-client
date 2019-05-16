@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NBAGameTable check contain child block 1`] = `
+<Component>
+  <MLBGameTable
+    fetchData={[Function]}
+    getScoreTableUI={[Function]}
+    subscribeIo={[Function]}
+  >
+    <div>
+      <div
+        className="boxscore"
+      >
+        <div
+          className="tableScore"
+        />
+      </div>
+    </div>
+  </MLBGameTable>
+</Component>
+`;
