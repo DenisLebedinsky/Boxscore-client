@@ -1,6 +1,4 @@
 export default {
-  get: params => {
-    return Promise.resolve({
       data: {
         league: "NBA",
         away_team: {
@@ -33,6 +31,4 @@ export default {
           }
         }
       }
-    });
-  }
-};
+    }

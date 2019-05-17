@@ -1,19 +1,163 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NBAGameTable check contain child block 1`] = `
-<Component>
-  <NBAGameTable
-    fetchData={[Function]}
-    getScoreTableUI={[Function]}
-    subscribeIo={[Function]}
+exports[`NBAGameTable render data 1`] = `
+<div
+  class="boxscore"
+>
+  <div
+    class="tableScore"
   >
     <div
-      className="boxscore"
+      class="teamNames_scoreDetails"
     >
       <div
-        className="tableScore"
-      />
+        class="teamNames"
+      >
+        <label
+          class="head_lable"
+        />
+        <label
+          data-testid="awayTeamNameAbr"
+        >
+          OKC
+        </label>
+        <label>
+          MIA
+        </label>
+      </div>
+      <div
+        class="scoreDetails"
+      >
+        <div
+          class="boxscore__team boxscore__team--header"
+        >
+          <div
+            class="boxscore__team__units"
+          >
+            <span>
+              1
+            </span>
+            <span>
+              2
+            </span>
+            <span>
+              3
+            </span>
+            <span>
+              4
+            </span>
+          </div>
+        </div>
+        <div
+          class="boxscore__team boxscore__team--away"
+        >
+          <div
+            class="boxscore__team__units"
+          >
+            <span>
+              26
+            </span>
+            <span>
+              23
+            </span>
+            <span>
+              22
+            </span>
+            <span>
+              35
+            </span>
+          </div>
+        </div>
+        <div
+          class="boxscore__team boxscore__team--home"
+        >
+          <div
+            class="boxscore__team__units"
+          >
+            <span>
+              31
+            </span>
+            <span>
+              28
+            </span>
+            <span>
+              36
+            </span>
+            <span>
+              26
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-  </NBAGameTable>
-</Component>
+    <div
+      class="totalDetails"
+    >
+      <div
+        class="boxscore__team__results boxscore__team__results--header"
+      >
+        <span
+          class="totalCheck"
+        >
+          Total
+        </span>
+      </div>
+      <div
+        class="boxscore__team__results"
+      >
+        <span
+          data-testid="awayTotalPoints"
+        >
+          106
+        </span>
+      </div>
+      <div
+        class="boxscore__team__results"
+      >
+        <span>
+          121
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="boxscore__details"
+  >
+    <div
+      class="boxscore__details__team boxscore__details__team--away"
+    >
+      <p>
+        <strong>
+          Oklahoma City
+        </strong>
+        <small>
+          OKC
+        </small>
+      </p>
+    </div>
+    <div
+      class="boxscore__details__info"
+    >
+      <strong>
+        completed
+        <br />
+        4th 
+      </strong>
+    </div>
+    <div
+      class="boxscore__details__team boxscore__details__team--home"
+    >
+      <p
+        data-testid="homeTeamName"
+      >
+        <strong>
+          Miami
+        </strong>
+        <small>
+          MIA
+        </small>
+      </p>
+    </div>
+  </div>
+</div>
 `;

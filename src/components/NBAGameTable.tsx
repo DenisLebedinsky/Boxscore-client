@@ -60,6 +60,7 @@ const NBAGameTable: React.FC<IProps> = props => {
 	}, [league])
 
 	const getTotalDetails = (data: ITotalDetails) => {
+	
 		if (!data) {
 			return null;
 		}
@@ -69,7 +70,7 @@ const NBAGameTable: React.FC<IProps> = props => {
 					<span className='totalCheck'>Total</span>
 				</div>
 				<div className="boxscore__team__results">
-					<span>{data.extentions.away_totals.points}</span>
+					<span data-testid="awayTotalPoints">{data.extentions.away_totals.points}</span>
 				</div>
 				<div className="boxscore__team__results">
 					<span>{data.extentions.home_totals.points}</span>
@@ -98,7 +99,7 @@ const NBAGameTable: React.FC<IProps> = props => {
 					</strong>
 				</div>
 				<div className="boxscore__details__team boxscore__details__team--home">
-					<p>
+					<p data-testid="homeTeamName">
 						<strong>{data.home_team.first_name}</strong><small>{data.home_team.abbreviation}</small>
 					</p>
 				</div>

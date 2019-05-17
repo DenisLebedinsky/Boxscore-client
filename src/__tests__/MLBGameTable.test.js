@@ -1,5 +1,5 @@
 import React from "react";
-import NBAGameTable from "../components/NBAGameTable";
+import MLBGameTable from "../components/MLBGameTable";
 import {
   render,
   fireEvent,
@@ -10,15 +10,15 @@ import {
 import axios from "axios";
 import mockData from "../__mocks__/mockDataNBA";
 
-describe("NBAGameTable", () => {
+describe("MLBGameTable", () => {
   afterEach(cleanup);
 
   axios.get = jest.fn();
   axios.get.mockResolvedValueOnce(mockData);
 
-  const { container, getByText, getByTestId } = render(<NBAGameTable />);
+  const { container, getByText, getByTestId } = render(<MLBGameTable />);
 
-  it("render data", async () => {
+  it("test for render data", async () => {
     const awayTotalPoints = await waitForElement(() =>
       getByTestId("awayTotalPoints")
     );
@@ -33,7 +33,7 @@ describe("NBAGameTable", () => {
 
     expect(axios.get).toHaveBeenCalledTimes(1);
     expect(axios.get).toHaveBeenCalledWith("/data", {
-      params: { league: "NBA" }
+      params: { league: "MLB" }
     });
 
     expect(container.firstChild).toMatchSnapshot();

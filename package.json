@@ -10,15 +10,9 @@
 		"@types/socket.io": "^2.1.2",
 		"@types/socket.io-client": "^1.4.32",
 		"axios": "^0.18.0",
-		"enzyme": "^3.9.0",
-		"enzyme-adapter-react-16": "^1.13.0",
-		"jest-dom": "^3.2.2",
-		"jest-enzyme": "^7.0.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-scripts": "3.0.0",
-		"react-test-renderer": "^16.8.6",
-		"react-testing-library": "^7.0.0",
 		"socket.io-client": "^2.2.0",
 		"typescript": "3.4.5"
 	},
@@ -45,6 +39,8 @@
 	},
 	"proxy": "http://localhost:3001",
 	"devDependencies": {
-		"dotenv": "^8.0.0"
+		"dotenv": "^8.0.0",
+		"jest-dom": "^3.2.2",
+		"react-testing-library": "^7.0.0"
 	}
 }

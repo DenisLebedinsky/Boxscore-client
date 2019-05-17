@@ -73,7 +73,7 @@ const MLBGameTable: React.FC<IProps> = props => {
 						<span>E</span>
 					</div>
 					<div className="boxscore__team__results">
-						<span>{awayPoints}</span>
+						<span data-testid="awayTotalPoints">{awayPoints}</span>
 						<span>{data.extentions.away_batter_totals.hits}</span>
 						<span>{data.extentions.away_errors}</span>
 					</div>
@@ -97,7 +97,7 @@ const MLBGameTable: React.FC<IProps> = props => {
 		return (
 			<div className="boxscore__details">
 				<div className="boxscore__details__team boxscore__details__team--away">
-					<p>
+					<p data-testid="homeTeamName">
 						<strong>{data.away_team.first_name}</strong><small>{data.away_team.abbreviation}</small>
 					</p>
 					<span>{data.extentions.away_batter_totals.batting_highlights.split(',').shift()}</span>

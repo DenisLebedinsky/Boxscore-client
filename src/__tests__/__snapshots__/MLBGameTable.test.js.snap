@@ -1,21 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NBAGameTable check contain child block 1`] = `
-<Component>
-  <MLBGameTable
-    fetchData={[Function]}
-    getScoreTableUI={[Function]}
-    subscribeIo={[Function]}
+exports[`MLBGameTable test for render data 1`] = `
+<div>
+  <div
+    class="boxscore"
   >
-    <div>
+    <div
+      class="tableScore"
+    >
       <div
-        className="boxscore"
+        class="teamNames_scoreDetails"
       >
         <div
-          className="tableScore"
-        />
+          class="teamNames"
+        >
+          <label
+            class="head_lable"
+          />
+          <label
+            data-testid="awayTeamNameAbr"
+          >
+            OKC
+          </label>
+          <label>
+            MIA
+          </label>
+        </div>
+        <div
+          class="scoreDetails"
+        >
+          <div
+            class="boxscore__team boxscore__team--header"
+          >
+            <div
+              class="boxscore__team__units"
+            >
+              <span>
+                1
+              </span>
+              <span>
+                2
+              </span>
+              <span>
+                3
+              </span>
+              <span>
+                4
+              </span>
+            </div>
+          </div>
+          <div
+            class="boxscore__team boxscore__team--away"
+          >
+            <div
+              class="boxscore__team__units"
+            >
+              <span>
+                26
+              </span>
+              <span>
+                23
+              </span>
+              <span>
+                22
+              </span>
+              <span>
+                35
+              </span>
+            </div>
+          </div>
+          <div
+            class="boxscore__team boxscore__team--home"
+          >
+            <div
+              class="boxscore__team__units"
+            >
+              <span>
+                31
+              </span>
+              <span>
+                28
+              </span>
+              <span>
+                36
+              </span>
+              <span>
+                26
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="totalDetails"
+      >
+        <div
+          class="boxscore__team__results boxscore__team__results--header"
+        >
+          <span>
+            R
+          </span>
+          <span>
+            H
+          </span>
+          <span>
+            E
+          </span>
+        </div>
+        <div
+          class="boxscore__team__results"
+        >
+          <span
+            data-testid="awayTotalPoints"
+          >
+            106
+          </span>
+          <span>
+            7
+          </span>
+          <span />
+        </div>
+        <div
+          class="boxscore__team__results"
+        >
+          <span>
+            121
+          </span>
+          <span>
+            13
+          </span>
+          <span />
+        </div>
       </div>
     </div>
-  </MLBGameTable>
-</Component>
+    <div
+      class="boxscore__details"
+    >
+      <div
+        class="boxscore__details__team boxscore__details__team--away"
+      >
+        <p
+          data-testid="homeTeamName"
+        >
+          <strong>
+            Oklahoma City
+          </strong>
+          <small>
+            OKC
+          </small>
+        </p>
+        <span>
+          10-33
+        </span>
+      </div>
+      <div
+        class="boxscore__details__info"
+      >
+        <strong>
+          BTM
+          <br />
+          9th 
+        </strong>
+      </div>
+      <div
+        class="boxscore__details__team boxscore__details__team--home"
+      >
+        <p>
+          <strong>
+            Miami
+          </strong>
+          <small>
+            MIA
+          </small>
+        </p>
+        <span>
+          5-29
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 `;

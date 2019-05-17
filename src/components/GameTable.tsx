@@ -24,7 +24,7 @@ function GameTable(Component: any) {
 				<div className="teamNames_scoreDetails">
 					<div className="teamNames">
 						<label className="head_lable"></label>
-						<label>{data.away_team.abbreviation}</label>
+						<label data-testid="awayTeamNameAbr">{data.away_team.abbreviation}</label>
 						<label>{data.home_team.abbreviation}</label>
 					</div>
 					<div className="scoreDetails">
