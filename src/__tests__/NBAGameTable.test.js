@@ -8,7 +8,7 @@ import {
   waitForElement
 } from "react-testing-library";
 import axios from "axios";
-import mockData from "../__mocks__/mockDataNBA";
+import mockData from "../__mocks__/mockData";
 
 describe("NBAGameTable", () => {
   afterEach(cleanup);
