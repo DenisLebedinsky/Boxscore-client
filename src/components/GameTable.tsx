@@ -57,7 +57,6 @@ function GameTable(Component: any) {
 		subscribeIo: (league: string, setData: React.Dispatch<any>) => {
 			const socket = io("/socket");
 			socket.on(`update_Data_${league}`, (data: any) => {
-				console.log(data)
 				setData(data)
 			});
 		}
